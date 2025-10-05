@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TwoScreens</string>
+    <string name="app_title">Diseño adaptativo en pantallas móviles</string>
+    <string name="primary_action">Probar acción</string>
 </resources>
