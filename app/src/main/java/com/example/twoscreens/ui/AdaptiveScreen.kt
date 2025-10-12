@@ -1,4 +1,3 @@
-@file:OptIn(androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi::class)
 package com.example.twoscreens.ui
 
 import android.content.res.Configuration
@@ -8,6 +7,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
@@ -26,12 +26,12 @@ import androidx.compose.ui.unit.dp
 import com.example.twoscreens.R
 import com.example.twoscreens.ui.theme.AppTheme
 
+@OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable
 fun AdaptiveScreen(windowSizeClass: WindowSizeClass) {
     val configuration = LocalConfiguration.current
     val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
-    // ---- valores TIPADOS (sin arrayOf) ----
     val hPadding: Dp
     val vPadding: Dp
     val titleStyle: TextStyle
@@ -64,7 +64,6 @@ fun AdaptiveScreen(windowSizeClass: WindowSizeClass) {
             buttonFraction = 1f
         }
     }
-    // --------------------------------------
 
     val content: @Composable ColumnScope.() -> Unit = {
         Text(
@@ -77,7 +76,7 @@ fun AdaptiveScreen(windowSizeClass: WindowSizeClass) {
         )
         Spacer(Modifier.height(24.dp))
         Button(
-            onClick = { /* TODO: acción */ },
+            onClick = { /* TODO */ },
             modifier = Modifier
                 .height(buttonHeight)
                 .fillMaxWidth(buttonFraction)
@@ -117,6 +116,7 @@ fun AdaptiveScreen(windowSizeClass: WindowSizeClass) {
     }
 }
 
+@OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Preview(showBackground = true, name = "Phone")
 @Composable
 private fun PreviewPhone() {

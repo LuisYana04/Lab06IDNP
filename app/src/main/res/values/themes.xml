@@ -1,4 +1,15 @@
-<resources>
-    <!-- Tu tema de aplicación, heredando de Material 3 -->
-    <style name="Theme.TwoScreens" parent="Theme.Material3.DayNight.NoActionBar" />
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base usando MaterialComponents -->
+    <style name="Theme.TwoScreens" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Referencias a los colores definidos -->
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
+
+
+        <item name="android:statusBarColor">@color/md_theme_primary</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
 </resources>
